@@ -1,26 +1,46 @@
 /*
 ** EPITECH PROJECT, 2017
-** my.h
+** sflm.h
 ** File description:
-** lib_csfml
+** function sfml
 */
 
 #ifndef MY_H
 #define MY_H
-#include <stdarg.h>
-#include <unistd.h>
-#include <stdlib.h>
 #include <SFML/Window/Event.h>
 #include <SFML/Graphics.h>
 #include <stdlib.h>
 #include <math.h>
 #include <stdarg.h>
 
-typedef struct framebuffer {
+struct framebuffer {
 	unsigned int width;
 	unsigned int height;
 	sfUint8 *pixels;
-}framebuffer_t;
+};
+
+typedef struct framebuffer framebuffer_t;
+
+typedef struct coordinate_s{
+	sfVector2i pa;
+	sfVector2i pb;
+	sfVector2i pc;
+	sfVector2i pd;
+	sfVector2i pe;
+	sfVector2i pf;
+	sfVector2i pg;
+	sfVector2i ph;
+}coord_t;
+
+typedef struct screen_savior_s{
+	sfVideoMode mode;
+	sfTexture *texture;
+	sfSprite *sprite;
+	sfRenderWindow *window;
+	framebuffer_t *fb;
+	sfEvent event;
+}screns_t;
+
 
 framebuffer_t *framebuffer_create(unsigned int width, unsigned int height);
 framebuffer_t *fb_clean(framebuffer_t *fb, unsigned width, unsigned height);
@@ -73,10 +93,5 @@ void game_cube(sfRenderWindow *window, sfSprite *sprite, sfTexture *texture,
 	       framebuffer_t *framebuffer);
 void game_triangle(sfRenderWindow *window, sfSprite *sprite, sfTexture *texture,
 		   framebuffer_t *framebuffer);
-int my_putstr(char const *str);
-char *my_revstr(char *str);
-int my_put_nbr(int nb);
-int my_strlen(char const *str);
-void my_putchar(char c);
 
 #endif /* MY_H_ */

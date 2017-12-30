@@ -7,7 +7,7 @@
 
 #include "my.h"
 
-int my_putstr(char const *str)
+int	my_putstr(char const *str)
 {
 	int a = 0;
 

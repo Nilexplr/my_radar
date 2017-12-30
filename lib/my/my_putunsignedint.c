@@ -1,30 +1,30 @@
 /*
 ** EPITECH PROJECT, 2017
-** my_put_number
+** put unsigned
 ** File description:
-** put number
+** put a unsigned int
 */
 
 #include "my.h"
 
-int my_put_nbr(int nb)
+int my_put_unsigned(unsigned int nb)
 {
 	long int i = 1;
 	long int result;
 
 	if (nb == 0)
-		my_putchar ('0');
+		my_putchar('0');
 	if (nb < 0) {
-		my_putchar ('-');
-		nb = nb * (-1);
+		result = 4294967295 - nb;
+		nb = result;
+		result = 0;
 	}
-	while (i <= nb) {
+	while (i <= nb)
 		i *= 10;
-	}
 	while (i > 1) {
-		i = i / 10;
-		result = (nb / i) % 10;
+		i = i/10;
+		result = (nb /i) % 10;
 		my_putchar(result + 48);
-	}
+		}
 	return (0);
 }

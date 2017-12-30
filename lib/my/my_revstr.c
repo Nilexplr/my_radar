@@ -5,13 +5,15 @@
 ** rev str
 */
 
+#include "my.h"
+
 char *my_revstr(char *str)
 {
 	int i = 0;
 	int n = 0;
 	int memory;
 
-	while (str[i] != '\0')
+	while (i < my_strlen(str))
 		i++;
 	i -= 1;
 	while (n <= i) {
