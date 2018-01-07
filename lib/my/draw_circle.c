@@ -5,7 +5,7 @@
 ** draw circle
 */
 
-#include "sflm.h"
+#include "my.h"
 
 int draw_circle(framebuffer_t *bf, sfVector2i center, int r, sfColor color)
 {

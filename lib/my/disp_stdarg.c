@@ -30,5 +30,5 @@ void disp_mod(va_list ap)
 
 void disp_u(va_list ap)
 {
-	my_put_unsigned(va_arg(ap,unsigned int));
+	my_put_unsigned(va_arg(ap, unsigned int));
 }

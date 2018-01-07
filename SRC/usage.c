@@ -27,4 +27,3 @@ int print_usage(char *str)
 		}
 	return (0);
 }
-

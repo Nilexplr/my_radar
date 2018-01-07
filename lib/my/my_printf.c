@@ -54,9 +54,9 @@ void no_flag(char s, int counter)
 int my_printf(char *s, ...)
 {
 	va_list ap;
-	void (*call[14])(va_list) = {init, disp_c, disp_s, disp_i, disp_i,
-				     disp_mod, disp_mod, disp_o, disp_x,
-				     disp_X, disp_u, disp_b, disp_S, disp_p };
+	void (*call[14])(va_list) =
+		{init, disp_c, disp_s, disp_i, disp_i, disp_mod, disp_mod,
+		 disp_o, disp_x, disp_x_m, disp_u, disp_b, disp_s_m, disp_p};
 	char flags[14] = " csid %oxXubSp";
 	int counter;
 
@@ -64,8 +64,7 @@ int my_printf(char *s, ...)
 	for ( int i = 0; i < my_strlen(s); i++) {
 		display_s(s[i]);
 		if (s[i] == '%') {
-			i += zero_case(s, i + 1);
-			i += watch_next(s, i);
+			i += zero_case(s, i + 1) + watch_next(s, i);
 			counter = define_flag(s[i + 1], flags);
 			call[counter](ap);
 			no_flag(s[i + 1], counter);

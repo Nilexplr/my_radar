@@ -5,7 +5,7 @@
 ** put pixels function
 */
 
-#include "sflm.h"
+#include "my.h"
 
 int my_put_pixel(framebuffer_t *buffer, unsigned int x, unsigned int y,
 		  sfColor color)

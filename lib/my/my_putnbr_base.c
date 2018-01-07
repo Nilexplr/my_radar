@@ -43,7 +43,7 @@ int octal_base(unsigned int nb)
 	while (i > 1) {
 		i = i/8;
 		result = (nb / i) % 8;
-	       	my_putchar(result + 48);
+		my_putchar(result + 48);
 	}
 	return (0);
 }

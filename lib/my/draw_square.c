@@ -5,7 +5,7 @@
 ** draw square function
 */
 
-#include "sflm.h"
+#include "my.h"
 
 void draw_square(framebuffer_t *framebuffer, sfVector2i pos, sfVector2i size, sfColor color)
 {

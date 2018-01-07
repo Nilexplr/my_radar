@@ -5,7 +5,7 @@
 ** framebuffer create function
 */
 
-#include "sflm.h"
+#include "my.h"
 
 framebuffer_t *framebuffer_create(unsigned int width, unsigned int height)
 {

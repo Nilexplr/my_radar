@@ -2,17 +2,16 @@
 ## EPITECH PROJECT, 2017
 ## Makefile
 ## File description:
-## makefile
+## lib
 ##
 
-SRC	=	draw_line.c		\
-		draw_square.c		\
-		framebuffer_create.c	\
-		my_put_pixel.c		\
-		clear_framebuffer.c	\
-		draw_triangle.c	\
-		draw_circle.c		\
-		my_putchar.c		\
+CC	=	ar rc
+
+RM	=	rm -f
+
+NAME	=	libmy.a
+
+SRC	=	my_putchar.c		\
 		my_put_nbr.c		\
 		my_putstr.c		\
 		my_strlen.c		\
@@ -22,25 +21,36 @@ SRC	=	draw_line.c		\
 		disp_basearg.c		\
 		my_putunsignedint.c	\
 		disp_ptrarg.c		\
-		my_printf.c
+		my_printf.c		\
+		my_str_isnum.c		\
+		draw_line.c		\
+		draw_square.c		\
+		framebuffer_create.c	\
+		my_put_pixel.c		\
+		clear_framebuffer.c	\
+		draw_triangle.c	\
+		draw_circle.c		\
+		my_str_isalpha.c	\
+		my_strlowcase.c	\
+		my_str_islower.c	\
+		my_getnbr.c
 
 OBJ	=	$(SRC:.c=.o)
 
-NAME	=	libmy.a
+CFLAGS	= 	-I include -Wall -Wextra -W
 
-all:	build
+all:	comp clean
 
-build:
+comp:
 	gcc -c $(SRC)
 	ar rc $(NAME) $(OBJ)
-	cp sflm.h ../../include/
-	cp my.h ../../include/
-	rm -f $(OBJ)
+	cp $(NAME) ../
+	cp my.h ../../include
 
 clean:
-	rm -f $(OBJ)
+	$(RM) $(OBJ)
 
 fclean:	clean
-	rm -f $(NAME)
+	$(RM) $(NAME)
 
 re:	fclean all

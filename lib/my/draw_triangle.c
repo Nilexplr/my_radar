@@ -4,7 +4,8 @@
 ** File description:
 ** triangle
 */
-#include "sflm.h"
+
+#include "my.h"
 
 int draw_triangle(framebuffer_t *fb,
 		  sfVector2i pa, sfVector2i pb, sfVector2i pc)

@@ -5,7 +5,6 @@
 ** base for flags
 */
 
-
 #include <stdarg.h>
 #include "my.h"
 
@@ -19,7 +18,7 @@ void disp_x(va_list ap)
 	my_putnbr_base(va_arg(ap, int), "0123456789abcdef");
 }
 
-void disp_X(va_list ap)
+void disp_x_m(va_list ap)
 {
 	my_putnbr_base(va_arg(ap, int), "0123456789ABCDEF");
 }
@@ -29,7 +28,7 @@ void disp_b(va_list ap)
 	my_putnbr_base(va_arg(ap, unsigned int), "01");
 }
 
-void disp_S(va_list ap)
+void disp_s_m(va_list ap)
 {
 	char *str = va_arg(ap, char*);
 

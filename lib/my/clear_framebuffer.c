@@ -4,7 +4,8 @@
 ** File description:
 ** clean framebuffer
 */
-#include "sflm.h"
+
+#include "my.h"
 
 framebuffer_t *fb_clean(framebuffer_t *fb, unsigned int width,
 				  unsigned int height)

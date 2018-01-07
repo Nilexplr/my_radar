@@ -5,7 +5,7 @@
 ** draw line
 */
 
-#include "sflm.h"
+#include "my.h"
 
 int draw_vertical(framebuffer_t *fb, sfVector2i point_a, sfVector2i point_b,
 		  sfColor color)

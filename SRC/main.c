@@ -13,4 +13,5 @@ int main(int ac, char **av)
 		return (84);
 	if (print_usage(av[1]) == 1)
 		return (0);
+	game_loop(ac, av);
 }
