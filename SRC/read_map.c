@@ -6,6 +6,7 @@
 */
 
 #include "my.h"
+#include "my_radar.h"
 
 char *read_map(char *s)
 {

@@ -38,7 +38,7 @@ int my_getnbr(char const *str)
 	int result = 0;
 	int j = 0;
 
-	while (str[i] != '\n' && j == 0) {
+	while (str[i] != '\n' && j == 0 && str[i] != '\0') {
 		if (str[i] == '-' && str[i + 1] <= '9' && str[i + 1] >= '0')
 			a = -1;
 		result = display_number(str, i, result);

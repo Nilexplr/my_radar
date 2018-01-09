@@ -5,6 +5,9 @@
 ** main my_radar
 */
 
+#include "my.h"
+#include "my_radar.h"
+
 int main(int ac, char **av)
 {
 	int i = 0;

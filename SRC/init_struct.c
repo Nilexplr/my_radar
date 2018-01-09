@@ -7,11 +7,11 @@
 
 #include "my.h"
 #include "struct.h"
+#include "my_radar.h"
 
-plane_t *init_plane(void)
+void *init_plane(plane_t *plane)
 {
-	plane_t *plane = malloc(sizeof(plane));
-
+	plane = malloc(sizeof(plane_t));
 	if (plane != NULL) {
 		plane->dep_x = 0;
 		plane->dep_y = 0;
@@ -22,13 +22,11 @@ plane_t *init_plane(void)
 		plane->display = 0;
 		plane->next = NULL;
 	}
-	return (plane);
 }
 
-tower_t  *init_tower(void)
+void *init_tower(tower_t *tower)
 {
-	tower_t *tower = malloc(sizeof(*tower));
-
+	tower = malloc(sizeof(tower_t));
 	if (tower != NULL) {
 		tower->tow_x = 0;
 		tower->tow_y = 0;
@@ -36,28 +34,25 @@ tower_t  *init_tower(void)
 		tower->display = 0;
 		tower->next = NULL;
 	}
-	return (tower);
 }
 
-area_t *init_area(void)
+void *init_area(area_t *area)
 {
-	area_t *area = malloc(sizeof(*area));
-
+	area = malloc(sizeof(area_t));
 	if (area != NULL) {
 		area->coord = NULL;
 		area->display = 0;
 		area->next = NULL;
 	}
-	return (area);
 }
 
 item_t *init_item(void)
 {
-	item_t *all = malloc(sizeof(*all));
+	item_t *all = malloc(sizeof(item_t));
 
 	if (all != NULL) {
-		all->plane = init_plane();
-		all->tower = init_tower();
-		all->area = init_area();
+		all->plane = init_plane(all->plane);
+		all->tower = init_tower(all->tower);
+		all->area = init_area(all->area);
 	}
 }

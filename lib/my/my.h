@@ -25,6 +25,7 @@ typedef struct framebuffer {
 	sfUint8 *pixels;
 }framebuffer_t;
 
+int my_printf(char *s, ...);
 int my_compute_power_rec(int nb, int p);
 int my_compute_square_root (int nb);
 int my_find_prime_sup(int nb);

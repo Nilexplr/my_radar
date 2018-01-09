@@ -7,26 +7,13 @@
 
 #include "my.h"
 
-int len_word(char *str)
-{
-	int i = 0;
-	int count = 0;
-
-	while (str[i] != '\0' && str[i] != ' ' && str[i] != '\t') {
-		if (my_str_isnum(str) == 0 && my_str_isalpha(str) == 0)
-			count++;
-		i++;
-	}
-	return (count);
-}
-
 int number_word(char *str)
 {
 	int count = 0;
 
 	for (int i = 0; str[i] != '\0'; i++) {
 		if (str[i] != ' ' &&
-		    (str[i + 1] == ' ' || str[i + 1] == '\t'))
+		    (str[i + 1] == ' ' || str[i + 1] == '\t' || str[i + 1] == '\0'))
 			count++;
 	}
 	return (count);
@@ -40,7 +27,7 @@ char **my_str_to_word_array(char *str)
 	int k = 0;
 
 	while (str[i] != '\0') {
-		tab[k] = malloc(sizeof(char) * len_word(str));
+		tab[k] = malloc(sizeof(char) * my_strlen(str));
 		while (str[i] == ' ' || str[i] == '\t')
 			i++;
 		j = 0;
@@ -49,6 +36,7 @@ char **my_str_to_word_array(char *str)
 			i++;
 			j++;
 		}
+		tab[k][j] = '\0';
 		k++;
 	}
 	tab[k] = NULL;

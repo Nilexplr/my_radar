@@ -5,7 +5,7 @@
 ** print usage function
 */
 
-#include "../include/my.h"
+#include "my.h"
 
 void disp_h(void)
 {
