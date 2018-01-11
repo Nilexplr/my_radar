@@ -35,10 +35,12 @@ void open_window(item_t *all)
 	background_t back = init_back();
 
 	prepare(window, back.sprite, back.texture);
+	prepare_all(all);
 	while (sfRenderWindow_isOpen(window)) {
 		close_window(window, event);
 		sfRenderWindow_clear(window, sfBlack);
 		sfRenderWindow_drawSprite(window, back.sprite, NULL);
+		draw_all(all, window);
 		sfRenderWindow_display(window);
 	}
 }

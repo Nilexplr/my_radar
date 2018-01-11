@@ -76,6 +76,7 @@ void add_area(area_t *area, char *s)
 	}
 	new->coord[i] = 150;
 	new->display = 1;
+	new->nb_coord = i / 2;
 	for ( ; area->next != NULL; area = area->next);
 	area->next = new;
 	new->next = NULL;

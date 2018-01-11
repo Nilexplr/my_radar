@@ -16,20 +16,21 @@ typedef struct sprite_background_s {
 
 typedef struct sprite_plane_s {
 	sfTexture *texture;
-	sfSprite *sprite;
 	sfVector2f pos;
+	sfRectangleShape *rect;
 }s_plane_t;
 
 typedef struct sprite_tower_s {
 	sfTexture *texture;
-	sfSprite *sprite;
 	sfVector2f pos;
+	sfCircleShape *circle;
 }s_tower_t;
 
 typedef struct sprite_area_s {
 	sfTexture *texture;
-	sfSprite *sprite;
-	sfVector2f *pos;
+	int point_count;
+	sfVector2f *points;
+	sfConvexShape *convex;
 }s_area_t;
 
 typedef struct plane_s {
@@ -55,6 +56,7 @@ typedef struct tower_s {
 
 typedef struct area_s {
 	int *coord;
+	int nb_coord;
 	int display;
 	s_area_t sprite;
 	struct area_s *next;

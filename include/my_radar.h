@@ -21,7 +21,13 @@ void open_window(item_t *all);
 background_t init_back(void);
 s_plane_t init_sprite_plane(plane_t *list);
 s_tower_t init_sprite_tower(tower_t *list);
+s_area_t init_sprite_area(area_t *list);
 void prepare(sfRenderWindow *window, sfSprite *sprite, sfTexture *texture);
 void destroy(sfRenderWindow *window, sfSprite *sprite, sfTexture *texture);
+sfRectangleShape *create_rectangle_entity(s_plane_t plane);
+sfCircleShape *create_circle_entity(s_tower_t tower, float radius);
+sfConvexShape *create_convex_entity(s_area_t area);
+sfRenderWindow *draw_all(item_t *all, sfRenderWindow *window);
+void prepare_all(item_t *all);
 
 #endif /* MY_H_ */

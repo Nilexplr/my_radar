@@ -9,6 +9,8 @@ SRC	=	./SRC/main.c				\
 		./SRC/graphics/open_window.c		\
 		./SRC/graphics/setup_window.c		\
 		./SRC/graphics/init_struct_graph.c	\
+		./SRC/graphics/setup_shape.c		\
+		./SRC/graphics/game_loop.c		\
 		./SRC/parsing/display_loop.c		\
 		./SRC/parsing/my_getnbr.c		\
 		./SRC/parsing/my_str_to_word_array.c	\
@@ -31,6 +33,7 @@ all:		$(NAME)
 $(NAME):	$(OBJ)
 		make -C $(LIB_DIR)
 		gcc -o $(NAME) $(OBJ) -L$(LIB_DIR) -lmy -lc_graph_prog $(CFLAGS)
+		rm $(OBJ)
 
 clean:
 	rm -f $(OBJ) $(LIB_OBJ) *.gc*

@@ -42,6 +42,7 @@ void *init_area(area_t *area)
 	if (area != NULL) {
 		area->coord = NULL;
 		area->display = 0;
+		area->nb_coord = 0;
 		area->next = NULL;
 	}
 }

@@ -29,7 +29,7 @@ sfConvexShape *create_convex(sfVector2f *points, int index, sfColor color)
 	sfVector2f origin;
 
 	for (int i =0; i < index; i++)
-		sfConvexShape_setPoint(shape, inde, points[i]);
+		sfConvexShape_setPoint(shape, index, points[i]);
 	sfConvexShape_setFillColor(shape, color);
 	if (index == 4) {
 		origin.x = points[3].x / 2;
@@ -84,9 +84,9 @@ int main(int ac, char **av)
 	sfRectangleShape *static_rect;
 	sfVector2f moving_rect_size = {100.0, 100.0};
 	sfVector2f static_rect_size = {100.0, 100.0};
-	sfVector2f moving_rect_pos = {500.0, 500.0};
-	sfVector2f static_rect_pos = {700.0, 300.0};
-	sfVector2f movement = {5.0, -3};
+	sfVector2f moving_rect_pos = {500.0, 400.0};
+	sfVector2f static_rect_pos = {700.0, 450.0};
+	sfVector2f movement = {5.0, 0};
 
   // Create the window
 	window = my_window_create();
@@ -102,7 +102,6 @@ int main(int ac, char **av)
 		// Clear the screen
 		sfRenderWindow_clear(window, sfBlack);
 		// Move the moving rectangle
-		sfRectangleShape_rotate(moving_rect, 1);
 		sfRectangleShape_move(moving_rect, movement);
 		// Check collision between the two rectangles
 		// and print a message they collide each other
