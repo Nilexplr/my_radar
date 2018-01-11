@@ -32,8 +32,7 @@ SRC	=	my_putchar.c		\
 		draw_circle.c		\
 		my_str_isalpha.c	\
 		my_strlowcase.c	\
-		my_str_islower.c	\
-		my_getnbr.c
+		my_str_islower.c	
 
 OBJ	=	$(SRC:.c=.o)
 

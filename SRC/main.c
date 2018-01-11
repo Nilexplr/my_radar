@@ -10,8 +10,6 @@
 
 int main(int ac, char **av)
 {
-	int i = 0;
-
 	if (ac != 2)
 		return (84);
 	if (print_usage(av[1]) == 1)

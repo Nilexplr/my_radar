@@ -23,9 +23,19 @@ sfRectangleShape *create_rectangle_entity(sfVector2f size, sfColor color)
 	return (rec);
 }
 
-sfConvexShape *create_convex(sfVector2f size, sfColor color)
+sfConvexShape *create_convex(sfVector2f *points, int index, sfColor color)
 {
-	
+	sfConvexShape *shape = sfConvexShape_create();
+	sfVector2f origin;
+
+	for (int i =0; i < index; i++)
+		sfConvexShape_setPoint(shape, inde, points[i]);
+	sfConvexShape_setFillColor(shape, color);
+	if (index == 4) {
+		origin.x = points[3].x / 2;
+		origin.y = points[3].y / 2;
+		sfConvexShape_setOrigin(shape, origin);
+	}
 }
 
 sfBool check_rectangle_collision(sfRectangleShape *rect1, sfRectangleShape *rect2)
@@ -49,16 +59,22 @@ sfRenderWindow *my_window_create()
 	mode.width = 1000;
 	mode.height = 1000;
 	mode.bitsPerPixel = 32;
-	window = sfRenderWindow_create(mode, "My Radar", sfDefaultStyle, NULL);
+	window = sfRenderWindow_create(mode, "My Radar", sfClose, NULL);
 	sfRenderWindow_setFramerateLimit(window, 30);
 	return (window);
 }
 
 transformed_shape_t *to_transformed_shape(sfConvexShape *shape)
 {
+	transformed_shape_t *transform_shape = malloc(sizeof(transformed_shape_t));
 	sfTransform transform = sfConvexShape_getTransform(shape);
+	int nb_point = sfConvexShape_getPointCount(shape);
 
-	
+	for (int i = 0; i < nb_point; i++)
+		transform_shape->points[i] =
+			sfTransform_transformPoint
+			(&transform, sfConvexShape_getPoint(shape, i));
+	return (transform_shape);
 }
 
 int main(int ac, char **av)
@@ -70,7 +86,7 @@ int main(int ac, char **av)
 	sfVector2f static_rect_size = {100.0, 100.0};
 	sfVector2f moving_rect_pos = {500.0, 500.0};
 	sfVector2f static_rect_pos = {700.0, 300.0};
-	sfVector2f movement = {5.0, 0};
+	sfVector2f movement = {5.0, -3};
 
   // Create the window
 	window = my_window_create();
@@ -87,7 +103,7 @@ int main(int ac, char **av)
 		sfRenderWindow_clear(window, sfBlack);
 		// Move the moving rectangle
 		sfRectangleShape_rotate(moving_rect, 1);
-//		sfRectangleShape_move(moving_rect, movement);
+		sfRectangleShape_move(moving_rect, movement);
 		// Check collision between the two rectangles
 		// and print a message they collide each other
 		if (check_rectangle_collision(moving_rect, static_rect) == sfTrue)

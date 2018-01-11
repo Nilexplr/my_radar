@@ -5,6 +5,8 @@
 ** strcut
 */
 
+#include <SFML/Graphics.h>
+
 typedef struct transformed_s
 {
 	int point_count;

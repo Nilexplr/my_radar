@@ -87,7 +87,6 @@ int draw_triangle(framebuffer_t *fb, sfVector2i pa, sfVector2i pb,
 int draw_cube(framebuffer_t *fb, int r, sfColor color);
 int draw_circle(framebuffer_t *buffer, sfVector2i center, int r, sfColor color);
 int draw_border(framebuffer_t *buffer, sfVector2i center, int r ,sfColor color);
-void refresh(sfRenderWindow *window, sfSprite *sprite, sfTexture *texture,
-	     framebuffer_t *framebuffer);
+void refresh(sfRenderWindow *window, sfSprite *sprite, sfTexture *texture);
 
 #endif /* MY_H_ */

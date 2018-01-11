@@ -7,6 +7,30 @@
 
 #ifndef STRUCT_H_
 #define STRUCT_H_
+#include "my.h"
+
+typedef struct sprite_background_s {
+	sfTexture *texture;
+	sfSprite *sprite;
+}background_t;
+
+typedef struct sprite_plane_s {
+	sfTexture *texture;
+	sfSprite *sprite;
+	sfVector2f pos;
+}s_plane_t;
+
+typedef struct sprite_tower_s {
+	sfTexture *texture;
+	sfSprite *sprite;
+	sfVector2f pos;
+}s_tower_t;
+
+typedef struct sprite_area_s {
+	sfTexture *texture;
+	sfSprite *sprite;
+	sfVector2f pos;
+}s_area_t;
 
 typedef struct plane_s {
 	int dep_x;

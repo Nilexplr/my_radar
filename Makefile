@@ -1,28 +1,22 @@
 ##
 ## EPITECH PROJECT, 2017
-## My_radar_2017
+## My_popup_2017
 ## File description:
 ## Makefile
 ##
 
-LIB_DIR	=	./lib/my/
-
-LIB_SRC	=	$(LIB_DIR)	\
-
-LIB_OBJ	=	$(LIB_DIR)*.o
-
-LIB	=	libmy.a
-
-UT_DIR	=	./tests/
-
-UT_SRC	=	$(UT_DIR)	\
-
-
-UT	=	units
-
-LDFLAGS	=	-lcriterion -lgcov -coverage
-
-SRC	=	main.c		\
+SRC	=	./SRC/main.c				\
+		./SRC/graphics/open_window.c		\
+		./SRC/graphics/setup_window.c		\
+		./SRC/graphics/init_struct_graph.c	\
+		./SRC/parsing/display_loop.c		\
+		./SRC/parsing/my_getnbr.c		\
+		./SRC/parsing/my_str_to_word_array.c	\
+		./SRC/parsing/my_str_to_line_array.c	\
+		./SRC/parsing/init_struct.c		\
+		./SRC/parsing/read_map.c		\
+		./SRC/usage.c				\
+		./SRC/parsing/struct_function.c
 
 OBJ	=	$(SRC:.c=.o)
 
@@ -30,15 +24,13 @@ CFLAGS	=	-I./include -W -Wall -Wextra -pedantic -g3
 
 NAME	=	my_radar
 
+LIB_DIR	=	./lib/my
+
 all:		$(NAME)
 
 $(NAME):	$(OBJ)
-	make re -C $(LIB_DIR)
-	gcc -o $(NAME) $(OBJ) -L$(LIB_DIR) -lmy -lc_graph_prog
-
-tests_run:
-	gcc -o $(UT) $(UT_SRC) $(LIB_SRC) $(CFLAGS) $(LDFLAGS)
-	./$(UT)
+		make -C $(LIB_DIR)
+		gcc -o $(NAME) $(OBJ) -L$(LIB_DIR) -lmy -lc_graph_prog $(CFLAGS)
 
 clean:
 	rm -f $(OBJ) $(LIB_OBJ) *.gc*
