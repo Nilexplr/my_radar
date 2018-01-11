@@ -29,7 +29,7 @@ typedef struct sprite_tower_s {
 typedef struct sprite_area_s {
 	sfTexture *texture;
 	sfSprite *sprite;
-	sfVector2f pos;
+	sfVector2f *pos;
 }s_area_t;
 
 typedef struct plane_s {
@@ -40,6 +40,7 @@ typedef struct plane_s {
 	int speed;
 	int delay;
 	int display;
+	s_plane_t sprite;
 	struct plane_s *next;
 }plane_t;
 
@@ -48,12 +49,14 @@ typedef struct tower_s {
 	int tow_y;
 	int radius;
 	int display;
+	s_tower_t sprite;
 	struct tower_s *next;
 }tower_t;
 
 typedef struct area_s {
 	int *coord;
 	int display;
+	s_area_t sprite;
 	struct area_s *next;
 }area_t;
 

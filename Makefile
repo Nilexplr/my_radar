@@ -36,6 +36,6 @@ clean:
 	rm -f $(OBJ) $(LIB_OBJ) *.gc*
 
 fclean:	clean
-	rm -f $(NAME) $(UT) $(LIB_DIR)$(LIB)
+	rm -f $(NAME) $(UT)
 
 re:	fclean all

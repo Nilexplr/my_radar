@@ -18,7 +18,9 @@ void game_loop(int ac, char **av);
 int print_usage(char *str);
 char **my_str_to_line_array(char *str, int number_line);
 void open_window(item_t *all);
-background_t *init_back(void);
+background_t init_back(void);
+s_plane_t init_sprite_plane(plane_t *list);
+s_tower_t init_sprite_tower(tower_t *list);
 void prepare(sfRenderWindow *window, sfSprite *sprite, sfTexture *texture);
 void destroy(sfRenderWindow *window, sfSprite *sprite, sfTexture *texture);
 

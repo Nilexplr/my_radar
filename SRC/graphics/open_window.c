@@ -32,13 +32,13 @@ void open_window(item_t *all)
 {
 	sfEvent event;
 	sfRenderWindow *window = my_window_create();
-	background_t *back = init_back();
+	background_t back = init_back();
 
-	prepare(window, back->sprite, back->texture);
+	prepare(window, back.sprite, back.texture);
 	while (sfRenderWindow_isOpen(window)) {
 		close_window(window, event);
 		sfRenderWindow_clear(window, sfBlack);
-		sfRenderWindow_drawSprite(window, back->sprite, NULL);
+		sfRenderWindow_drawSprite(window, back.sprite, NULL);
 		sfRenderWindow_display(window);
 	}
 }
