@@ -30,7 +30,7 @@ void game_loop(int ac, char **av)
 {
 	item_t *all = prepare_game(ac, av);
 
-	for (plane_t *it = all->plane->next; it != NULL; it = it->next) {
+	for (plane_t *it = all->plane->next; it != all->plane; it = it->next) {
 		printf("dep x %d ", it->dep_x);
 		printf("dep y %d ", it->dep_y);
 		printf("arr x %d ", it->arr_x);

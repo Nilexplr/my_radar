@@ -45,6 +45,7 @@ typedef struct plane_s {
 	int display;
 	s_plane_t sprite;
 	struct plane_s *next;
+	struct plane_s *prec;
 }plane_t;
 
 typedef struct tower_s {

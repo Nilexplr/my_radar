@@ -8,6 +8,7 @@
 #ifndef MY_RADAR_H
 #define MY_RADAR_H
 #include "struct.h"
+#include "my.h"
 
 char **define_map(int ac, char **av);
 item_t *init_item(void);
@@ -31,5 +32,6 @@ void draw_all(item_t *all, sfRenderWindow *window);
 void prepare_all(item_t *all);
 void mouvement_all(item_t *all, sfRenderWindow *window);
 sfVector2f init_mouvement(sfVector2f point_a, sfVector2f point_b);
+float init_rotate(sfVector2f dep, sfVector2f arr);
 
 #endif /* MY_H_ */

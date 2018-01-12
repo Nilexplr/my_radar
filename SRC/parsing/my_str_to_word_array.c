@@ -13,7 +13,8 @@ int number_word(char *str)
 
 	for (int i = 0; str[i] != '\0'; i++) {
 		if (str[i] != ' ' &&
-		    (str[i + 1] == ' ' || str[i + 1] == '\t' || str[i + 1] == '\0'))
+			(str[i + 1] == ' ' || str[i + 1] == '\t'
+			|| str[i + 1] == '\0'))
 			count++;
 	}
 	return (count);
@@ -27,7 +28,7 @@ char **my_str_to_word_array(char *str)
 	int k = 0;
 
 	while (str[i] != '\0') {
-		tab[k] = malloc(sizeof(char) * my_strlen(str));
+		tab[k] = malloc(sizeof(char) * my_strlen(str) + 1);
 		while (str[i] == ' ' || str[i] == '\t')
 			i++;
 		j = 0;

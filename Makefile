@@ -33,7 +33,7 @@ all:		$(NAME)
 
 $(NAME):	$(OBJ)
 		make -C $(LIB_DIR)
-		gcc -o $(NAME) $(OBJ) -L$(LIB_DIR) -lmy -lc_graph_prog $(CFLAGS)
+		gcc -o $(NAME) $(OBJ) -L$(LIB_DIR) -lmy -lm -lc_graph_prog $(CFLAGS)
 		rm $(OBJ)
 
 clean:

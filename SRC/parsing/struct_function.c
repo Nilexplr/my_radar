@@ -21,9 +21,10 @@ void add_plane(plane_t *plane, char *s)
 	new->speed = my_getnbr(tab[5]);
 	new->delay = my_getnbr(tab[6]);
 	new->display = 1;
-	for ( ; plane->next != NULL; plane = plane->next);
-	plane->next = new;
-	new->next = NULL;
+	new->prec = plane->prec;
+	new->next = plane;
+	plane->prec->next = new;
+	plane->prec = new;
 }
 
 void add_tower(tower_t *tower, char *s)

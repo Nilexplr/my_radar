@@ -5,8 +5,7 @@
 ** setup shape functions
 */
 
-#include "my.h"
-#include "struct.h"
+#include "my_radar.h"
 
 sfRectangleShape *create_rectangle_entity(s_plane_t plane)
 {
@@ -19,6 +18,7 @@ sfRectangleShape *create_rectangle_entity(s_plane_t plane)
 	sfRectangleShape_setOutlineColor(rec, sfCyan);
 	sfRectangleShape_setTexture(rec, plane.texture, sfTrue);
 	sfRectangleShape_setOrigin(rec, origin);
+	sfRectangleShape_setRotation(rec, init_rotate(plane.pos, plane.end));
 	sfRectangleShape_setPosition(rec, plane.pos);
 	return (rec);
 }
