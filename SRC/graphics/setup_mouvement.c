@@ -27,6 +27,26 @@ sfVector2f init_mouvement(sfVector2f dep, sfVector2f arr)
 	}
 	return (mouvement);
 }
+float calcul_up(sfVector2f dep, sfVector2f arr, float rotate)
+{
+	if (dep.x - arr.x == 0)
+		return (rotate);
+	if (abs((dep.y - arr.y)) / abs((dep.x - arr.x)) <= 1)
+		rotate += 45;
+	return (rotate);
+}
+
+float calcul_down(sfVector2f dep, sfVector2f arr, float rotate)
+{
+	if (dep.x - arr.x == 0) {
+		rotate += 180;
+		return (rotate);
+	}
+	if (abs((dep.y - arr.y)) / abs((dep.x - arr.x)) >= 1)
+		rotate = 90 - rotate;
+	return (rotate);
+
+}
 
 float init_rotate(sfVector2f dep, sfVector2f arr)
 {
@@ -36,15 +56,15 @@ float init_rotate(sfVector2f dep, sfVector2f arr)
 
 	if (dep.x >= arr.x) {
 		if (dep.y >= arr.y)
-			rotate += 270;
+			rotate = calcul_down(dep, arr, rotate) + 240;
 		if (dep.y < arr.y)
-			rotate += 180;
+			rotate = calcul_up(arr, dep, rotate) + 180;
 	}
 	if (dep.x < arr.x) {
 		if (dep.y >= arr.y)
-			return (rotate);
+			rotate = calcul_up(arr, dep, rotate);
 		if (dep.y < arr.y)
-			rotate += 90;
+			rotate = calcul_down(arr, dep, rotate) + 90;
 	}
 	return (rotate);
 }
