@@ -26,6 +26,9 @@ s_plane_t init_sprite_plane(plane_t *list)
 		("include/data_base/gardian.png", NULL);
 	plane.pos.x = list->dep_x * 10;
 	plane.pos.y = list->dep_y * 10;
+	plane.end.x = list->arr_x * 10;
+	plane.end.y = list->arr_y * 10;
+	plane.mouvement = init_mouvement(plane.pos, plane.end);
 	plane.rect = create_rectangle_entity(plane);
 	return (plane);
 }

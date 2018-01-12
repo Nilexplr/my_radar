@@ -17,7 +17,7 @@ void prepare_all(item_t *all)
 		it->sprite = init_sprite_area(it);
 }
 
-sfRenderWindow *draw_all(item_t *all, sfRenderWindow *window)
+void draw_all(item_t *all, sfRenderWindow *window)
 {
 	for (tower_t *it = all->tower->next; it != NULL; it = it->next)
 		sfRenderWindow_drawCircleShape(window, it->sprite.circle, NULL);

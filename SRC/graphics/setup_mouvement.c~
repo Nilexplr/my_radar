@@ -1,0 +1,29 @@
+/*
+** EPITECH PROJECT, 2018
+** setup_mouvement.c
+** File description:
+** setup mouvement function
+*/
+
+#include "my_radar.h"
+
+void mouvement_all(item_t *all, sfRenderWindow *window)
+{
+	for (plane_t *it = all->plane->next; it != NULL; it = it->next)
+		sfRectangleShape_move(it->sprite.rect, it->sprite.mouvement);
+
+}
+
+sfVector2f init_mouvement(sfVector2f point_a, sfVector2f point_b)
+{
+	sfVector2f mouvement;
+
+	if (point_a.x =< point_b.x) {
+		mouvement.x = 1;
+		mouvement.y = (point_a.y - point_b.y) / (point_a.x - point_b.x);
+	}
+	if (point_a.x > point_b.x) {
+		mouvement.x = -1;
+		mouvement.y = (point_a.y - point_b.y) / (point_a.x - point_b.x);
+	}
+}

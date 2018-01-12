@@ -27,7 +27,9 @@ void destroy(sfRenderWindow *window, sfSprite *sprite, sfTexture *texture);
 sfRectangleShape *create_rectangle_entity(s_plane_t plane);
 sfCircleShape *create_circle_entity(s_tower_t tower, float radius);
 sfConvexShape *create_convex_entity(s_area_t area);
-sfRenderWindow *draw_all(item_t *all, sfRenderWindow *window);
+void draw_all(item_t *all, sfRenderWindow *window);
 void prepare_all(item_t *all);
+void mouvement_all(item_t *all, sfRenderWindow *window);
+sfVector2f init_mouvement(sfVector2f point_a, sfVector2f point_b);
 
 #endif /* MY_H_ */

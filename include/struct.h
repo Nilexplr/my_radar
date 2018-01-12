@@ -17,6 +17,8 @@ typedef struct sprite_background_s {
 typedef struct sprite_plane_s {
 	sfTexture *texture;
 	sfVector2f pos;
+	sfVector2f end;
+	sfVector2f mouvement;
 	sfRectangleShape *rect;
 }s_plane_t;
 

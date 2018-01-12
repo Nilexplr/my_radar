@@ -6,6 +6,7 @@
 ##
 
 SRC	=	./SRC/main.c				\
+		./SRC/graphics/setup_mouvement.c	\
 		./SRC/graphics/open_window.c		\
 		./SRC/graphics/setup_window.c		\
 		./SRC/graphics/init_struct_graph.c	\
@@ -18,7 +19,7 @@ SRC	=	./SRC/main.c				\
 		./SRC/parsing/init_struct.c		\
 		./SRC/parsing/read_map.c		\
 		./SRC/usage.c				\
-		./SRC/parsing/struct_function.c
+		./SRC/parsing/struct_function.c	\
 
 OBJ	=	$(SRC:.c=.o)
 
