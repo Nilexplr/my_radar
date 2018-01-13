@@ -9,6 +9,13 @@
 #define STRUCT_H_
 #include "my.h"
 
+typedef struct transformed_s
+{
+	int point_count;
+	sfVector2f *points;
+	float *axis_slopes;
+}transformed_shape_t;
+
 typedef struct sprite_background_s {
 	sfTexture *texture;
 	sfSprite *sprite;
@@ -20,6 +27,7 @@ typedef struct sprite_plane_s {
 	sfVector2f end;
 	sfVector2f mouvement;
 	sfRectangleShape *rect;
+	transformed_shape_t *transfo;
 }s_plane_t;
 
 typedef struct sprite_tower_s {
@@ -33,6 +41,7 @@ typedef struct sprite_area_s {
 	int point_count;
 	sfVector2f *points;
 	sfConvexShape *convex;
+	transformed_shape_t *transfo;
 }s_area_t;
 
 typedef struct plane_s {

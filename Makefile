@@ -12,6 +12,8 @@ SRC	=	./SRC/main.c				\
 		./SRC/graphics/init_struct_graph.c	\
 		./SRC/graphics/setup_shape.c		\
 		./SRC/graphics/game_loop.c		\
+		./SRC/graphics/setup_collision.c	\
+		./SRC/graphics/detect_collision.c	\
 		./SRC/parsing/display_loop.c		\
 		./SRC/parsing/my_getnbr.c		\
 		./SRC/parsing/my_str_to_word_array.c	\

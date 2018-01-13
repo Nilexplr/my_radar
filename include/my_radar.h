@@ -33,5 +33,7 @@ void prepare_all(item_t *all);
 void mouvement_all(item_t *all, sfRenderWindow *window);
 sfVector2f init_mouvement(sfVector2f point_a, sfVector2f point_b);
 float init_rotate(sfVector2f dep, sfVector2f arr);
+int detect_collision(transformed_shape_t *obj1, transformed_shape_t *obj2);
+void setup_collision(sfRectangleShape *obj1, sfRectangleShape* obj2);
 
 #endif /* MY_H_ */
