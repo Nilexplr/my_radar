@@ -1,0 +1,11 @@
+/*
+** EPITECH PROJECT, 2018
+** setup_destroye.c
+** File description:
+** destroy functions
+*/
+
+void destroy_plane(plane_t *plane)
+{
+	
+}

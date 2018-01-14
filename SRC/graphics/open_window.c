@@ -41,7 +41,7 @@ void open_window(item_t *all)
 		sfRenderWindow_clear(window, sfBlack);
 		sfRenderWindow_drawSprite(window, back.sprite, NULL);
 		mouvement_all(all, window);
-		setup_collision(all->plane->next->sprite.rect, all->plane->prec->sprite.rect);
+		collision_all(all);
 		draw_all(all, window);
 		sfRenderWindow_display(window);
 	}
