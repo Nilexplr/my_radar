@@ -14,8 +14,6 @@ char *read_map(char *s)
 	int size = 0;
 	int fd = open(s, O_RDONLY);
 
-	if (fd == -1)
-		exit(84);
 	size = read(fd, buff, 30719);
 	buff[size] = '\0';
 	return (buff);

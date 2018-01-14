@@ -27,3 +27,31 @@ int print_usage(char *str)
 		}
 	return (0);
 }
+
+int detect_map_error(int ac, char **av)
+{
+	char **map = define_map(ac, av);
+
+	for (int i = 0; map[i] != NULL; i++) {
+		if (map[i][0] == 'A' && number_word(map[i]) != 7)
+			return (1);
+		if (map[i][0] == 'T' && number_word(map[i]) != 4)
+			return (1);
+		if (map[i][0] == 'D' && (number_word(map[i]) % 2 == 0))
+			return (1);
+		if (map[i][0] != 'A' && map[i][0] != 'T' && map[i][0] != 'D' && map[i][0] != '\0')
+			return (1);
+	}
+	return (0);
+}
+
+int detect_error(int ac, char **av)
+{
+	int fd = open(av[1], O_RDONLY);
+
+	if (fd == -1)
+		return (1);
+	if (detect_map_error(ac, av) == 1)
+		return (1);
+	return (0);
+}

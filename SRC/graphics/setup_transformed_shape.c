@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2018
-** setup_collision.c
+** setup_transformed_shape.c
 ** File description:
-** setup collision functions
+** setup transformed shape functions
 */
 
 #include "my_radar.h"
@@ -65,50 +65,4 @@ transformed_shape_t *rectangle_transformed_shape(sfRectangleShape *shape)
 			(tshape->points[i],tshape->points[b]);
 	}
 	return (tshape);
-}
-
-void setup_collision(int option, ...)
-{
-	transformed_shape_t *obj1 = malloc(sizeof(transformed_shape_t));
-	transformed_shape_t *obj2 = malloc(sizeof(transformed_shape_t));
-	va_list ap;
-
-	va_start(ap, option);
-	if (option == 1) {
-		obj1 = va_arg(ap, area_t*)->sprite.convex;
-		obj2 = va_arg(ap, plane_t*)->sprite.rect;
-	}
-	if (option == 1) {
-		obj1 = va_arg(ap, plane_t*)->sprite.rect;
-		obj2 = va_arg(ap, plane_t*)->sprite.rect;
-	}
-	if (detect_collision(obj1, obj2) == 1) {
-		my_putstr("It collides\n");
-	}
-}
-
-void collision_all(item_t *all)
-{
-	transformed_shape_t *obj1 = malloc(sizeof(transformed_shape_t));
-	transformed_shape_t *obj2 = malloc(sizeof(transformed_shape_t));
-
-	if (all->plane->next->next->next == all->plane) {
-		obj1 = rectangle_transformed_shape(all->plane->next->next->sprite.rect);
-		obj2 = rectangle_transformed_shape(all->plane->prec->prec->sprite.rect);
-		setup_collision(obj1, obj2, 2);
-	}
-	for (plane_t *it = all->plane->next; it->next->next != all->plane; it = it->next) {
-		obj1 = rectangle_transformed_shape(it->sprite.rect);
-		for (plane_t *itb = it->next; itb != all->plane; itb = itb->next) {
-			obj2 = rectangle_transformed_shape(itb->sprite.rect);
-			setup_collision(obj1, obj2, 2);
-		}
-	}
-	for (area_t *it = all->area->next; it != NULL; it = it->next) {
-		obj1 = convex_transformed_shape(it->sprite.convex);
-		for (plane_t *itb = all->plane->next; itb != all->plane; itb = itb->next) {
-			obj2 = rectangle_transformed_shape(itb->sprite.rect);
-			setup_collision(obj1, obj2, 1);
-		}
-	}
 }

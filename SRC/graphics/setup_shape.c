@@ -10,8 +10,8 @@
 sfRectangleShape *create_rectangle_entity(s_plane_t plane)
 {
 	sfRectangleShape *rec = sfRectangleShape_create();
-	sfVector2f size = {60, 60};
-	sfVector2f origin = {30, 30};
+	sfVector2f size = {40, 40};
+	sfVector2f origin = {20, 20};
 
 	sfRectangleShape_setSize(rec, size);
 	sfRectangleShape_setOutlineThickness(rec, 2);
