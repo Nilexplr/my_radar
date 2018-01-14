@@ -8,7 +8,7 @@
 #include "my.h"
 
 int my_put_pixel(framebuffer_t *buffer, unsigned int x, unsigned int y,
-		  sfColor color)
+		sfColor color)
 {
 	if (x > buffer->width || y > buffer->height || x < 0 || y < 0)
 		return (0);

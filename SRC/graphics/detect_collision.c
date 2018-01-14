@@ -34,7 +34,7 @@ int detect_min(sfVector2f *obj, int nb)
 int detect_max(sfVector2f *obj, int nb)
 {
 	sfVector2f max = obj[0];
-	int value = 0;;
+	int value = 0;
 
 	for (int i = 0; i < nb; i++)
 		if (obj[i].x > max.x) {

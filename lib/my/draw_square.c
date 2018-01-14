@@ -7,7 +7,8 @@
 
 #include "my.h"
 
-void draw_square(framebuffer_t *framebuffer, sfVector2i pos, sfVector2i size, sfColor color)
+void draw_square(framebuffer_t *framebuffer, sfVector2i pos, sfVector2i size,
+		sfColor color)
 {
 	int i = pos.y;
 	int j;
@@ -18,7 +19,7 @@ void draw_square(framebuffer_t *framebuffer, sfVector2i pos, sfVector2i size, sf
 		while (j < size.x)
 		{
 			my_put_pixel(framebuffer, j , i, color);
-				j++;
+			j++;
 		}
 		i++;
 	}

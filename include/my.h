@@ -77,16 +77,18 @@ int display_l(char *s, int i);
 framebuffer_t *framebuffer_create(unsigned int width, unsigned int height);
 framebuffer_t *fb_clean(framebuffer_t *fb, unsigned width, unsigned height);
 int my_put_pixel(framebuffer_t *buffer, unsigned int x, unsigned int y,
-		  sfColor color);
+		sfColor color);
 void draw_square(framebuffer_t *framebuffer, sfVector2i pos,
-		 sfVector2i size, sfColor color);
+		sfVector2i size, sfColor color);
 int draw_line(framebuffer_t *framebuffer, sfVector2i point_a,
-	      sfVector2i point_b, sfColor color);
+		sfVector2i point_b, sfColor color);
 int draw_triangle(framebuffer_t *fb, sfVector2i pa, sfVector2i pb,
-		  sfVector2i pc);
+		sfVector2i pc);
 int draw_cube(framebuffer_t *fb, int r, sfColor color);
-int draw_circle(framebuffer_t *buffer, sfVector2i center, int r, sfColor color);
-int draw_border(framebuffer_t *buffer, sfVector2i center, int r ,sfColor color);
+int draw_circle(framebuffer_t *buffer, sfVector2i center, int r,
+		sfColor color);
+int draw_border(framebuffer_t *buffer, sfVector2i center, int r,
+		sfColor color);
 void refresh(sfRenderWindow *window, sfSprite *sprite, sfTexture *texture);
 
 #endif /* MY_H_ */

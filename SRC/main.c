@@ -23,6 +23,6 @@ int main(int ac, char **av)
 		write(2, "Error in the file, please check the values.\n", 44);
 		return (84);
 	}
-	game_loop(ac, av);
+	prepare_game(ac, av);
 	return (0);
 }

@@ -20,9 +20,12 @@ void prepare_all(item_t *all)
 void draw_all(item_t *all, sfRenderWindow *window)
 {
 	for (tower_t *it = all->tower->next; it != NULL; it = it->next)
-		sfRenderWindow_drawCircleShape(window, it->sprite.circle, NULL);
+		sfRenderWindow_drawCircleShape(window, it->sprite.circle,
+						NULL);
 	for (plane_t *it = all->plane->next; it != all->plane; it = it->next)
-		sfRenderWindow_drawRectangleShape(window, it->sprite.rect, NULL);
+		sfRenderWindow_drawRectangleShape(window, it->sprite.rect,
+						NULL);
 	for (area_t *it = all->area->next; it != NULL; it = it->next)
-		sfRenderWindow_drawConvexShape(window, it->sprite.convex, NULL);
+		sfRenderWindow_drawConvexShape(window, it->sprite.convex,
+						NULL);
 }

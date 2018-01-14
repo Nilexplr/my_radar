@@ -61,8 +61,8 @@ transformed_shape_t *rectangle_transformed_shape(sfRectangleShape *shape)
 		b = i + 1;
 		if (b == tshape->point_count)
 			b = 0;
-		tshape->axis_slopes[i] = calcul_axis_slopes
-			(tshape->points[i],tshape->points[b]);
+		tshape->axis_slopes[i] =
+		calcul_axis_slopes(tshape->points[i], tshape->points[b]);
 	}
 	return (tshape);
 }

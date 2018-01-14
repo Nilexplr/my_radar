@@ -56,7 +56,7 @@ int my_printf(char *s, ...)
 	va_list ap;
 	void (*call[14])(va_list) =
 		{init, disp_c, disp_s, disp_i, disp_i, disp_mod, disp_mod,
-		 disp_o, disp_x, disp_x_m, disp_u, disp_b, disp_s_m, disp_p};
+		disp_o, disp_x, disp_x_m, disp_u, disp_b, disp_s_m, disp_p};
 	char flags[14] = " csid %oxXubSp";
 	int counter;
 

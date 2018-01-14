@@ -39,7 +39,8 @@ int detect_map_error(int ac, char **av)
 			return (1);
 		if (map[i][0] == 'D' && (number_word(map[i]) % 2 == 0))
 			return (1);
-		if (map[i][0] != 'A' && map[i][0] != 'T' && map[i][0] != 'D' && map[i][0] != '\0')
+		if (map[i][0] != 'A' && map[i][0] != 'T' && map[i][0] != 'D'&&
+		map[i][0] != '\0')
 			return (1);
 	}
 	return (0);
