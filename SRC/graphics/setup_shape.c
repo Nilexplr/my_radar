@@ -40,7 +40,6 @@ sfCircleShape *create_circle_entity(s_tower_t tower, float radius)
 sfConvexShape *create_convex_entity(s_area_t area)
 {
 	sfConvexShape *shape = sfConvexShape_create();
-	sfVector2f origin = { 0, 0};
 
 	sfConvexShape_setPointCount(shape, area.point_count);
 	for (int i =0; i < area.point_count; i++)
@@ -49,17 +48,4 @@ sfConvexShape *create_convex_entity(s_area_t area)
 	sfConvexShape_setOutlineColor(shape, sfYellow);
 	sfConvexShape_setTexture(shape, area.texture, sfTrue);
 	return (shape);
-}
-
-sfBool check_rectangle_collision(sfRectangleShape *rect1, sfRectangleShape *rect2)
-{
-	sfVector2f pos1 = sfRectangleShape_getPosition(rect1);
-	sfVector2f pos1a = {pos1.x + 100, pos1.y + 100};
-	sfVector2f pos2 = sfRectangleShape_getPosition(rect2);
-	sfVector2f pos2a = {pos2.x + 100, pos2.y + 100};
-
-	if ( pos1.x <= pos2a.x && pos1.y <= pos2.y &&
-		pos1a.x >= pos2.x && pos1a.y >= pos2.y)
-		return (sfTrue);
-	return (sfFalse);
 }

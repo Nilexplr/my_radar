@@ -7,7 +7,7 @@
 
 #include "my_radar.h"
 
-void mouvement_all(item_t *all, sfRenderWindow *window)
+void mouvement_all(item_t *all)
 {
 	for (plane_t *it = all->plane->next; it != all->plane; it = it->next)
 		sfRectangleShape_move(it->sprite.rect, it->sprite.mouvement);

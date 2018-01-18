@@ -9,9 +9,9 @@
 #include "struct.h"
 #include "my_radar.h"
 
-item_t *prepare_game(int ac, char **av)
+item_t *prepare_game(char *av)
 {
-	char **map = define_map(ac, av);
+	char **map = define_map(av);
 	item_t *all = init_item();
 
 	for (int i = 0; map[i] != NULL; i++) {

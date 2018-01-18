@@ -64,8 +64,8 @@ int detect_overlap(sfVector2f *obj1, sfVector2f *obj2, int nb1, int nb2)
 
 int detect_collision(transformed_shape_t *obj1, transformed_shape_t *obj2)
 {
-	sfVector2f *projected1 = malloc(sizeof(sfVector2f) * obj1->point_count);
-	sfVector2f *projected2 = malloc(sizeof(sfVector2f) * obj2->point_count);
+	sfVector2f *projected1 = malloc(sizeof(sfVector2f) * (obj1->point_count + 1));
+	sfVector2f *projected2 = malloc(sizeof(sfVector2f) * (obj2->point_count + 1));
 
 	for (int j = 0; j < obj1->point_count; j++) {
 		for (int i = 0; i < obj1->point_count; i++)

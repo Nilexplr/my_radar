@@ -41,7 +41,7 @@ void open_window(item_t *all)
 		close_window(window, event);
 		sfRenderWindow_clear(window, sfBlack);
 		sfRenderWindow_drawSprite(window, back.sprite, NULL);
-		mouvement_all(all, window);
+		mouvement_all(all);
 		collision_all(all);
 		i = define_end(all);
 		draw_all(all, window);

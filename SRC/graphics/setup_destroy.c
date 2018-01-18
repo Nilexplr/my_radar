@@ -7,7 +7,7 @@
 
 #include "my_radar.h"
 
-void *destroy_plane(plane_t *plane)
+void destroy_plane(plane_t *plane)
 {
 	sfTexture_destroy(plane->sprite.texture);
 	sfRectangleShape_destroy(plane->sprite.rect);

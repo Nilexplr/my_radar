@@ -29,11 +29,12 @@ int count_line(char *s)
 	return (count);
 }
 
-char **define_map(int ac, char **av)
+char **define_map(char *av)
 {
-	char *s = read_map(av[1]);
+	char *s = read_map(av);
 	int line = count_line(s);
 	char **map = my_str_to_line_array(s, line + 1);
 
+	free(s);
 	return (map);
 }

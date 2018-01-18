@@ -5,7 +5,7 @@
 ** print usage function
 */
 
-#include "my.h"
+#include "my_radar.h"
 
 void disp_h(void)
 {
@@ -28,9 +28,9 @@ int print_usage(char *str)
 	return (0);
 }
 
-int detect_map_error(int ac, char **av)
+int detect_map_error(char *av)
 {
-	char **map = define_map(ac, av);
+	char **map = define_map(av);
 
 	for (int i = 0; map[i] != NULL; i++) {
 		if (map[i][0] == 'A' && number_word(map[i]) != 7)
@@ -46,13 +46,13 @@ int detect_map_error(int ac, char **av)
 	return (0);
 }
 
-int detect_error(int ac, char **av)
+int detect_error(char *av)
 {
-	int fd = open(av[1], O_RDONLY);
+	int fd = open(av, O_RDONLY);
 
 	if (fd == -1)
 		return (1);
-	if (detect_map_error(ac, av) == 1)
+	if (detect_map_error(av) == 1)
 		return (1);
 	return (0);
 }
