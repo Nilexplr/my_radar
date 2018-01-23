@@ -28,7 +28,7 @@ SRC	=	./SRC/main.c					\
 
 OBJ	=	$(SRC:.c=.o)
 
-CFLAGS	=	-I./include -W -Wall -Wextra -pedantic -g3
+CFLAGS	=	-I./include -W -Wall -Wextra -pedantic
 
 NAME	=	my_radar
 
